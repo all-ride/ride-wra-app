@@ -1,0 +1,81 @@
+{
+    "routes": [
+        {
+            "path": "/api/v1/caches",
+            "controller": "ride\\web\\rest\\controller\\CacheControlController",
+            "action": "indexAction",
+            "methods": "GET",
+            "id": "api.caches.index"
+        },
+        {
+            "path": "/api/v1/caches",
+            "controller": "ride\\web\\rest\\controller\\CacheControlController",
+            "action": "saveAction",
+            "methods": "PATCH",
+            "id": "api.caches.update.bulk"
+        },
+        {
+            "path": "/api/v1/caches/%id%",
+            "controller": "ride\\web\\rest\\controller\\CacheControlController",
+            "action": "detailAction",
+            "methods": "GET",
+            "id": "api.caches.detail"
+        },
+        {
+            "path": "/api/v1/caches/%id%",
+            "controller": "ride\\web\\rest\\controller\\CacheControlController",
+            "action": "saveAction",
+            "methods": "PATCH",
+            "id": "api.caches.update"
+        },
+        {
+            "path": "/api/v1/caches/%id%/clear",
+            "controller": "ride\\web\\rest\\controller\\CacheControlController",
+            "action": "clearAction",
+            "methods": "POST",
+            "id": "api.caches.clear"
+        },
+        {
+            "path": "/api/v1/caches/%id%/warm",
+            "controller": "ride\\web\\rest\\controller\\CacheControlController",
+            "action": "warmAction",
+            "methods": "POST",
+            "id": "api.caches.warm"
+        },
+        {
+            "path": "/api/v1/parameters",
+            "controller": "ride\\web\\rest\\controller\\ParameterController",
+            "action": "indexAction",
+            "methods": "GET",
+            "id": "api.parameters.index"
+        },
+        {
+            "path": "/api/v1/parameters",
+            "controller": "ride\\web\\rest\\controller\\ParameterController",
+            "action": "saveAction",
+            "methods": "POST",
+            "id": "api.parameters.create"
+        },
+        {
+            "path": "/api/v1/parameters/%id%",
+            "controller": "ride\\web\\rest\\controller\\ParameterController",
+            "action": "detailAction",
+            "methods": "GET",
+            "id": "api.parameters.detail"
+        },
+        {
+            "path": "/api/v1/parameters/%id%",
+            "controller": "ride\\web\\rest\\controller\\ParameterController",
+            "action": "saveAction",
+            "methods": "PATCH",
+            "id": "api.parameters.update"
+        },
+        {
+            "path": "/api/v1/parameters/%id%",
+            "controller": "ride\\web\\rest\\controller\\ParameterController",
+            "action": "deleteAction",
+            "methods": "DELETE",
+            "id": "api.parameters.delete"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "dependencies": [
+        {
+            "interfaces": "ride\\library\\http\\jsonapi\\JsonApiResourceAdapter",
+            "class": "ride\\web\\rest\\jsonapi\\CacheControlJsonApiResourceAdapter",
+            "id": "caches",
+            "tags": "app"
+        },
+        {
+            "interfaces": "ride\\library\\http\\jsonapi\\JsonApiResourceAdapter",
+            "class": "ride\\web\\rest\\jsonapi\\ParameterJsonApiResourceAdapter",
+            "id": "parameters",
+            "tags": "app"
+        },
+        {
+            "class": "ride\\web\\rest\\controller\\CacheControlController",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "api",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\http\\jsonapi\\JsonApi",
+                                "id": "app"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "ride\\web\\rest\\controller\\ParameterController",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "api",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\http\\jsonapi\\JsonApi",
+                                "id": "app"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
