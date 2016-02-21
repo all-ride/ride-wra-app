@@ -32,8 +32,10 @@ class ParameterController extends AbstractResourceJsonApiController {
      * @return mixed Array with resource data or false when an error occured
      */
     protected function getResources(JsonApiQuery $query, &$total) {
-        $parameters = $this->config->getAll();
-        $parameters = $this->config->getConfigHelper()->flattenConfig($parameters);
+        $config = $this->getConfig();
+
+        $parameters = $config->getAll();
+        $parameters = $config->getConfigHelper()->flattenConfig($parameters);
 
         $keyQuery = null;
         $valueQuery = null;
@@ -101,7 +103,7 @@ class ParameterController extends AbstractResourceJsonApiController {
      * @return mixed Resource data if found or false when an error occured
      */
     protected function getResource($id, $addError = true) {
-        $value = $this->config->get($id);
+        $value = $this->getConfig()->get($id);
         if ($value === null) {
             if ($addError) {
                 $this->addResourceNotFoundError($this->type, $id);
@@ -143,7 +145,7 @@ class ParameterController extends AbstractResourceJsonApiController {
      * @return null
      */
     protected function saveResource(&$resource) {
-        $this->config->set($resource['key'], $resource['value']);
+        $this->getConfig()->set($resource['key'], $resource['value']);
 
         $resource['id'] = $resource['key'];
     }
@@ -154,7 +156,7 @@ class ParameterController extends AbstractResourceJsonApiController {
      * @return null
      */
     protected function deleteResource($resource) {
-        $this->config->set($resource['key'], null);
+        $this->getConfig()->set($resource['key'], null);
     }
 
     /**
