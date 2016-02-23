@@ -15,7 +15,7 @@
         "ride/lib-http": ">=0.3.0",
         "ride/lib-http-jsonapi": ">=0.2.0",
         "ride/web": ">=0.10.0",
-        "ride/wra": ">=0.1.0",
+        "ride/wra": ">=0.1.0"
     },
     "autoload": {
         "psr-0": {
